@@ -24,4 +24,31 @@ class Producto extends Conexion{
     }
     
     // METODO PARA CONSULTAR
+
+    public static function buscarTodos(...$columnas){
+        // $cols = '';
+        // if(count($columnas) > 0){
+        //     $cols = implode(',', $columnas) ;
+        // }else{
+        //     $cols = '*';
+        // }
+        $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
+        $sql = "SELECT $cols FROM productos where prod_situacion = 1 ";
+        $resultado = self::servir($sql);
+        return $resultado;
+    }
+
+    public function buscar(...$columnas){
+        $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
+        $sql = "SELECT $cols FROM productos where prod_situacion = 1 ";
+
+        if($this->prod_nombre != ''){
+            $sql .= " AND prod_nombre like '%$this->prod_nombre%' ";
+        }
+        if($this->prod_precio != ''){
+            $sql .= " AND prod_precio = $this->prod_precio ";
+        }
+        $resultado = self::servir($sql);
+        return $resultado;
+    }
 }
