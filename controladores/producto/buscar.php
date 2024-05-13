@@ -7,8 +7,8 @@
     // consulta
     try {
         // var_dump($_GET);
-        $_POST['prod_nombre'] = htmlspecialchars( $_POST['prod_nombre']);
-        $_POST['prod_precio'] = filter_var( $precio , FILTER_VALIDATE_FLOAT) ;
+        $_GET['prod_nombre'] = htmlspecialchars( $_GET['prod_nombre']);
+        $_GET['prod_precio'] = filter_var( $_GET['prod_precio'] , FILTER_VALIDATE_FLOAT) ;
         $objProducto = new Producto($_GET);
         $productos = $objProducto->buscar();
         $resultado = [
