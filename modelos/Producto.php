@@ -40,6 +40,7 @@ class Producto extends Conexion{
 
     public function buscar(...$columnas){
         $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
+     
         $sql = "SELECT $cols FROM productos where prod_situacion = 1 ";
 
         if($this->prod_nombre != ''){
@@ -48,6 +49,7 @@ class Producto extends Conexion{
         if($this->prod_precio != ''){
             $sql .= " AND prod_precio = $this->prod_precio ";
         }
+
         $resultado = self::servir($sql);
         return $resultado;
     }

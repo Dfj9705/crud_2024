@@ -3,12 +3,17 @@
     // ini_set('display_startup_errors', '1');
     // error_reporting(E_ALL);
     require '../../modelos/Producto.php';
-    
+  
     $mensaje = '';
     $precio =  $_POST['prod_precio'];
     // VALIDAR INFORMACION
     $_POST['prod_nombre'] = htmlspecialchars( $_POST['prod_nombre']);
     $_POST['prod_precio'] = filter_var( $precio , FILTER_VALIDATE_FLOAT) ;
+    // $regex = '/^(19|20)\d\d-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/';
+
+    // $_POST['prod_fecha'] = filter_var($_POST['prod_fecha'], FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => $regex)));
+    // $_POST['prod_fecha'] = str_replace('T', ' ', $_POST['prod_fecha']);
+    // $_POST['prod_fecha'] = date("Y-m-d H:i", strtotime($_POST['prod_fecha']));
     
     if($_POST['prod_nombre'] == '' || !$_POST['prod_precio'] || $_POST['prod_precio'] < 0 ){
         // ALERTA PARA VALIDAR DATOS
@@ -57,7 +62,7 @@
     //         break;
     // }
 
-
+        //      [0      ,    1      ,    2   ]
     $alertas = ['danger', 'success', 'warning'];
 
     
@@ -66,6 +71,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-6 alert alert-<?=$alertas[$resultado['codigo']] ?>" role="alert">
             <?= $resultado['mensaje'] ?>
+            <?= $resultado['detalle'] ?>
         </div>
     </div>
     <div class="row justify-content-center">

@@ -12,9 +12,15 @@
         <div class="row mb-3">
             <div class="col">
                 <label for="prod_precio">Precio del producto</label>
-                <input type="number" name="prod_precio" id="prod_precio" min="0" step="0.01" class="form-control" required>
+                <input type="text" name="prod_precio" id="prod_precio" min="0" step="0.01" class="form-control" required>
             </div>
         </div>
+        <!-- <div class="row mb-3">
+            <div class="col">
+                <label for="prod_fecha">FEcha del producto</label>
+                <input type="datetime-local"  name="prod_fecha" id="prod_fecha" min="0" step="0.01" class="form-control" required>
+            </div>
+        </div> -->
         <div class="row mb-3">
             <div class="col">
                 <button type="submit" class="btn btn-primary w-100">Guardar</button>
