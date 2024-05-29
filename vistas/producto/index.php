@@ -1,3 +1,12 @@
+<?php 
+
+    require '../../modelos/Cliente.php';
+
+    $objCliente = new Cliente();
+    $clientes = $objCliente->buscar();
+    var_dump($clientes);
+?>
+
 <?php include_once '../templates/header.php'; ?>
 
 <h1 class="text-center">Formulario de productos</h1>
@@ -21,6 +30,14 @@
                 <input type="datetime-local"  name="prod_fecha" id="prod_fecha" min="0" step="0.01" class="form-control" required>
             </div>
         </div> -->
+
+
+        <select name="cliente" id="clientes" class="form-control">
+            <option value="">SELECCIONE...</option>
+            <?php foreach ($clientes as $cliente) : ?>
+                <option value="<?= $cliente['cli_id'] ?>"><?= $cliente['cli_nombre'] .  " " . $cliente['cli_apellido']  ?></option>
+            <?php endforeach ?>
+        </select>
         <div class="row mb-3">
             <div class="col">
                 <button type="submit" class="btn btn-primary w-100">Guardar</button>

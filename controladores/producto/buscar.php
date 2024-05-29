@@ -60,14 +60,14 @@
                             <tr>
                                 <td><?= $key + 1?></td>
                                 <td><?= $producto['prod_nombre'] ?></td>
-                                <td><?= $producto['prod_precio'] ?></td>
+                                <td>Q. <?= number_format($producto['prod_precio'],2) ?></td>
                                 <td class="text-center">
                                 <div class="dropdown">
                                     <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Acciones
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square me-2"></i>Modificar</a></li>
+                                        <li><a class="dropdown-item" href="/crud_2024/vistas/producto/modificar.php?prod_id=<?= base64_encode($producto['prod_id'])?>"><i class="bi bi-pencil-square me-2"></i>Modificar</a></li>
                                         <li><a class="dropdown-item" href="#"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
                                     </ul>
                                 </div>

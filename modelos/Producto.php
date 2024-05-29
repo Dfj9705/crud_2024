@@ -53,4 +53,19 @@ class Producto extends Conexion{
         $resultado = self::servir($sql);
         return $resultado;
     }
+
+    public function buscarPorId($id){
+     
+        $sql = "SELECT * FROM productos where prod_situacion = 1 and prod_id = $id ";
+        $resultado = array_shift( self::servir($sql));
+        // $resultado = self::servir($sql)[0];
+        return $resultado;
+    }
+
+        // METODO PARA MODIFICAR
+    public function modificar(){
+        $sql = "UPDATE productos SET prod_nombre = '$this->prod_nombre', prod_precio = '$this->prod_precio' WHERE prod_id = $this->prod_id ";
+        $resultado = $this->ejecutar($sql);
+        return $resultado; 
+    }
 }
