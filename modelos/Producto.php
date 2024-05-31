@@ -68,4 +68,14 @@ class Producto extends Conexion{
         $resultado = $this->ejecutar($sql);
         return $resultado; 
     }
+
+
+    public function eliminar(){
+        // $sql = "DELETE FROM productos WHERE prod_id = $this->prod_id ";
+
+        // echo $sql;
+        $sql = "UPDATE productos SET prod_situacion = 0 WHERE prod_id = $this->prod_id ";
+        $resultado = $this->ejecutar($sql);
+        return $resultado; 
+    }
 }

@@ -68,7 +68,7 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="/crud_2024/vistas/producto/modificar.php?prod_id=<?= base64_encode($producto['prod_id'])?>"><i class="bi bi-pencil-square me-2"></i>Modificar</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
+                                        <li><a class="dropdown-item" href="/crud_2024/controladores/producto/eliminar.php?prod_id=<?= base64_encode($producto['prod_id'])?>"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
                                     </ul>
                                 </div>
 
@@ -85,4 +85,14 @@
             </table>
         </div>        
     </div>        
+
+    <script>
+
+        // function alerta_eliminar(id){
+        //     if(confirm("¿Esta segurdo que desea eliminar este registro?")){
+        //         location.href = "/crud_2024/controladores/producto/eliminar.php?prod_id=" + id
+        //     }
+        // }
+
+    </script>
 <?php include_once '../../vistas/templates/footer.php'; ?>  
