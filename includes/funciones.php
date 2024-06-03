@@ -18,3 +18,19 @@ function validarNIT($nit) : bool{
     $residuo2 = $resta % 11;
     return $residuo2 == $validador;
 }
+
+function estaVacio($array = []) : bool{
+    //OBTENER EL LARGO DEL ARRAY 0
+    $largo = count($array);
+    //CONTADOR INICIALIZADO EN 0
+    $contadorVacio = 0;
+    //POR CADA ELEMENTO DEL ARRAY SE CUENTAN CUANTOS ESPACIOS VACIOS HAY
+    foreach ($array as $key => $elemento) {
+        if($elemento == ''){
+            // INCREMENTA EL CONTADOR
+            $contadorVacio++;
+        }
+    }
+    // TODOS LOS ELEMENTOS ESTAN VACIOS?
+    return $largo == $contadorVacio;
+}

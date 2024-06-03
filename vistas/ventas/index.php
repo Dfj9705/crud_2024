@@ -25,7 +25,7 @@
         </div>
         <div class="row mb-3">
             <div class="col">
-                <label for="fact_cliente"></label>
+                <label for="fact_cliente">Cliente</label>
                 <select name="fact_cliente" id="fact_cliente" class="form-control" required>
                     <option value="">SELECCIONE...</option>
                     <?php foreach ($clientes as $cliente) : ?>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-lg-3">
                     <label for="cantidad<?=$i?>">Cantidad <?=$i?></label>
-                    <input type="number" min="0" class="form-control" step="1" name="cantidad" id="cantidad<?=$i?>">
+                    <input type="number" min="0" class="form-control" step="1" name="cantidad[]" id="cantidad<?=$i?>">
                 </div>
             </div>
         <?php endfor?>
@@ -61,7 +61,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <a href="../../controladores/producto/buscar.php" class="btn btn-info w-100">Buscar</a>
+                <a href="../../vistas/ventas/buscar.php" class="btn btn-info w-100">Buscar</a>
             </div>
         </div>
     </form>

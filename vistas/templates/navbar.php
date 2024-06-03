@@ -15,7 +15,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/crud_2024/vistas/ventas/index.php"><i class="bi bi-plus-circle me-2"></i>Ingreso de ventas</a></li>
-            <!-- <li><a class="dropdown-item" href="/crud_2024/vistas/producto/buscar.php"><i class="bi bi-search me-2"></i>Buscar</a></li> -->
+            <li><a class="dropdown-item" href="/crud_2024/vistas/ventas/buscar.php"><i class="bi bi-search me-2"></i>Buscar</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
